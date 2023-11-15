@@ -41,7 +41,7 @@ char *strcat_cd(data_shell *datash, char *msg, char *error, char *ver_str)
  * error_get_cd - A function that generate the error message
  * @datash: A pointer to the data shell struct
  * Return: A pointer to the generated error message
- */The error message string
+ */
 char *error_get_cd(data_shell *datash)
 {
 	int length, length_id;
