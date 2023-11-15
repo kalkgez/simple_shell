@@ -17,7 +17,7 @@ int exit_shell(data_shell *datash)
 	{
 		status = _atoi(datash->args[1]);
 		digit = _isdigit(datash->args[1]);
-		str_length = _strlength(datash->args[1]);
+		str_length = _strlen(datash->args[1]);
 		large_num = status > (unsigned int)INT_MAX;
 		if (!digit || str_length > 10 || large_num)
 		{

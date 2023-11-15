@@ -22,7 +22,7 @@ char *error_env(data_shell *datash)
 	if (error == 0)
 	{
 		free(error);
-		free(version string);
+		free(version_string);
 		return (NULL);
 	}
 
