@@ -1,16 +1,18 @@
 #include "shell.h"
+
 /**
- * free_data - A function that frees the memory allocated for the data shell
+ * free_data - A function that frees the memory allocated for the dat shell
+ *
  * @datash: A pointer to the data shell struct
  * Return: void
  */
 void free_data(data_shell *datash)
 {
-	unsigned int n;
+	unsigned int i;
 
-	for (n = 0; datash->_environ[n]; n++)
+	for (i = 0; datash->_environ[i]; i++)
 	{
-		free(datash->_environ[n]);
+		free(datash->_environ[i]);
 	}
 
 	free(datash->_environ);
@@ -19,13 +21,13 @@ void free_data(data_shell *datash)
 
 /**
  * set_data - A function that initialises the data shell struct
- * @datash: A pointer to the data shell struct
- * @av: command line argumnet
+ * @datash: A pointer to the shell struct
+ * @av: A command line argument
  * Return: void
  */
 void set_data(data_shell *datash, char **av)
 {
-	unsigned int n;
+	unsigned int i;
 
 	datash->av = av;
 	datash->input = NULL;
@@ -33,24 +35,24 @@ void set_data(data_shell *datash, char **av)
 	datash->status = 0;
 	datash->counter = 1;
 
-	for (n = 0; environ[n]; n++)
+	for (i = 0; environ[i]; i++)
 		;
 
-	datash->_environ = malloc(sizeof(char *) * (n + 1));
+	datash->_environ = malloc(sizeof(char *) * (i + 1));
 
-	for (n = 0; environ[n]; n++)
+	for (i = 0; environ[i]; i++)
 	{
-		datash->_environ[n] = _strdup(environ[n]);
+		datash->_environ[i] = _strdup(environ[i]);
 	}
 
-	datash->_environ[n] = NULL;
+	datash->_environ[i] = NULL;
 	datash->pid = aux_itoa(getpid());
 }
 
 /**
  * main - A function that entry point of the program
- * @ac: A number of command line arguments
- * @av: An array of command line argumnet
+ * @ac: A number of command line arguents
+ * @av: An array of command line argument
  * Return: Exit status of the program
  */
 int main(int ac, char **av)
