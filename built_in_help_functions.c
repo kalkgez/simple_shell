@@ -14,8 +14,7 @@ void aux_help_env(void)
 
 }
 /**
- * aux_help_setenv - A function that displays
- * help information  for the setenv command
+ * aux_help_setenv - A function that displays help information  for the setenv command
  * Return: void
  */
 void aux_help_setenv(void)
@@ -30,9 +29,8 @@ void aux_help_setenv(void)
 	write(STDOUT_FILENO, commandHelp, _strlen(commandHelp));
 }
 /**
- * aux_help_unsetenv -  A function that displays
- * help information  for the unsetenv command
- * Return: void
+ * aux_help_unsetenv -  A function that displays help information  for the unsetenv command
+ * Return: 
  */
 void aux_help_unsetenv(void)
 {
@@ -53,15 +51,13 @@ void aux_help_general(void)
 	char *commandHelp = "^-^ bash, version 1.0(1)-release\n";
 
 	write(STDOUT_FILENO, commandHelp, _strlen(commandHelp));
-	commandHelp = "These commands are defined internally. Type 'help'";
+	commandHelp = "These commands are defined internally.Type 'help' to see the list";
 	write(STDOUT_FILENO, commandHelp, _strlen(commandHelp));
-	commandHelp = "Type 'help name' to find out more about the function 'name'.\n
-		\n ";
+	commandHelp = "Type 'help name' to find out more about the function 'name'.\n\n ";
 	write(STDOUT_FILENO, commandHelp, _strlen(commandHelp));
 	commandHelp = " alias: alias [name=['string']]\n cd: cd [-L|[-P [-e]] [-@]] ";
 	write(STDOUT_FILENO, commandHelp, _strlen(commandHelp));
-	commandHelp = "[dir]\nexit: exit [n]\n
-		env: env [option] [name=value] [command ";
+	commandHelp = "[dir]\nexit: exit [n]\n  env: env [option] [name=value] [command ";
 	write(STDOUT_FILENO, commandHelp, _strlen(commandHelp));
 	commandHelp = "[args]]\n  setenv: setenv [variable] [value]\n  unsetenv: ";
 	write(STDOUT_FILENO, commandHelp, _strlen(commandHelp));
@@ -69,8 +65,7 @@ void aux_help_general(void)
 	write(STDOUT_FILENO, commandHelp, _strlen(commandHelp));
 }
 /**
- * aux_help_exit - A function that displays help
- * information  for the exit command
+ * aux_help_exit - A function that displays help information  for the exit command
  * Return: void
  */
 void aux_help_exit(void)
